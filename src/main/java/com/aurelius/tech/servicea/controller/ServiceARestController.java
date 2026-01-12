@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("1.0/")
+@RequestMapping("/1.0")
 public class ServiceARestController {
 
 
@@ -21,7 +21,7 @@ public class ServiceARestController {
     }
 
 
-    @GetMapping("hello")
+    @GetMapping("/hello")
     ServiceAResponse hello(){
 
         ServiceAResponse serviceAResponse = new ServiceAResponse();
