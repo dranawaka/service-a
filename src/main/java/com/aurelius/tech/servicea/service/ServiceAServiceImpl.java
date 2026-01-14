@@ -2,6 +2,7 @@ package com.aurelius.tech.servicea.service;
 
 import com.aurelius.tech.servicea.model.ServiceBResponse;
 
+
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.retry.annotation.Retry;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class ServiceAServiceImpl implements ServiceAService{
     public ServiceBResponse callService() {
 
         String response =  webClient.get()
-                .uri("http://localhost:8082/1.0/service-b")
+                .uri("http://service-b:8080/1.0/service-b")
                 .retrieve()
                 .bodyToMono(String.class)
                 .block();
