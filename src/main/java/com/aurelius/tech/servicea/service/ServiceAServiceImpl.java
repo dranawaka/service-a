@@ -1,6 +1,7 @@
 package com.aurelius.tech.servicea.service;
 
 import com.aurelius.tech.servicea.model.ServiceBResponse;
+
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.retry.annotation.Retry;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,9 @@ public class ServiceAServiceImpl implements ServiceAService{
                 .retrieve()
                 .bodyToMono(String.class)
                 .block();
+
+        System.out.println(response);
+
 
         ServiceBResponse serviceBResponse =  new ServiceBResponse();
         serviceBResponse.setMessage(response);

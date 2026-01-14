@@ -14,16 +14,4 @@ public class ServiceAApplication {
         SpringApplication.run(ServiceAApplication.class, args);
     }
 
-    @Bean
-    CommandLineRunner run(UserRepository repo) {
-        return args -> {
-            UserEntity u = new UserEntity();
-            u.setName("Dilan");
-            u.setEmail("dilan@example.com");
-            repo.save(u);
-
-            System.out.println(repo.findAll().get(0).getName());
-        };
-    }
-
 }
